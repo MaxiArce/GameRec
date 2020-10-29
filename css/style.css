@@ -1,0 +1,245 @@
+body {
+    font-family: 'Montserrat', sans-serif;
+    background: #292a31!important;
+    width: 100%;
+}
+
+
+/* seccion populares */
+
+.container__populares-section {
+    margin: 20px;
+    margin-bottom: 100px;
+}
+
+.title-populares {
+    color: white;
+    font-weight: 400;
+}
+
+.rounded {
+    background-color: grey;
+}
+
+.card {
+    margin: 20px 10px;
+    background-color: black;
+    border: 0;
+    background-color: transparent !important;
+}
+
+.card:first-child {
+    margin-left: 0px;
+}
+
+.card:last-child {
+    margin-right: 0px;
+}
+
+.card-item img {
+    margin: 0px;
+    border-radius: 20px;
+    width: 100%;
+    object-fit: cover;
+}
+
+.card-item h2 {
+    color: white;
+    font-size: 32px;
+    margin: 0px;
+}
+
+.card-item p {
+    color: white;
+    font-size: 24px;
+    margin: 5px 0px 0px 0px;
+}
+
+.card-item .btn {
+    opacity: 0;
+    padding: 0px;
+}
+
+.card-gradient {
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+    position: absolute;
+    opacity: 1;
+    background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0) 100%);
+}
+
+
+/* seccion tabs buscar-recomendar */
+
+.container__tabs-section {
+    margin: 20px;
+}
+
+
+/* botones buscar-recomendar */
+
+.container__select-tab {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.button_select-tab {
+    margin: 10px 20px;
+    font-weight: 500;
+    font-size: 18px;
+    border: none;
+    background-color: transparent;
+    color: grey;
+}
+
+.button_select-tab:focus {
+    outline: none;
+}
+
+#button__search {
+    color: white;
+}
+
+
+/*Conteniedo seccion Buscar*/
+
+#tab__search {
+    display: block;
+    margin: 40px 2%;
+    max-width: 96%;
+}
+
+
+/*Plataformas*/
+
+.container__platforms {
+    margin-top: 50px;
+}
+
+.container__platforms h4 {
+    color: white;
+}
+
+.button__platform {
+    color: white;
+    border: none;
+    margin: 5px 5px;
+    padding: 2px 10px;
+    border-radius: 15px;
+    background-color: grey;
+}
+
+.button__platform:focus {
+    outline: none;
+}
+
+
+/*Generos*/
+
+.container__genres {
+    margin-top: 50px;
+}
+
+.container__genres h4 {
+    color: white;
+}
+
+.button__genres {
+    color: white;
+    border: none;
+    margin: 5px 5px;
+    padding: 2px 10px;
+    border-radius: 15px;
+    background-color: grey;
+}
+
+.button__genres:focus {
+    outline: none;
+}
+
+
+/*Slider Año*/
+
+.container__slider {
+    margin-top: 50px;
+}
+
+.container__slider h4 {
+    color: white;
+}
+
+.container__slider p {
+    color: white;
+}
+
+#range {
+    -webkit-appearance: none;
+    width: 80%;
+    height: 15px;
+    border-radius: 15px;
+    background: grey;
+    outline: none;
+    /* opacity: 0.7; */
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+}
+
+#range::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: white;
+    cursor: pointer;
+}
+
+#slider-text {
+    color: white;
+}
+
+
+/*boton buscar*/
+
+.container__button-search {
+    display: flex;
+    justify-content: center;
+}
+
+.button__search {
+    font-size: 18px;
+    font-weight: 500;
+    color: white;
+    border: none;
+    margin: 5px 5px;
+    padding: 4px 15px;
+    border-radius: 15px;
+    background-color: #4871FF;
+}
+
+
+/*Contenido seccion recomendacion*/
+
+.tab-content {
+    display: none;
+    margin-top: 50px;
+}
+
+.tab-content h4 {
+    text-align: center;
+    color: white;
+}
+
+.container__input-search {
+    margin: 100px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-search {
+    border-radius: 15px;
+    margin: 0px 20px;
+}
