@@ -12,7 +12,7 @@ body {
     margin-bottom: 100px;
 }
 
-.title-populares {
+.title{
     color: white;
     font-weight: 400;
 }
@@ -22,7 +22,8 @@ body {
 }
 
 .card {
-    margin: 20px 10px;
+    margin: 20px 0px 20px 10px;
+    width: 100%;
     background-color: black;
     border: 0;
     background-color: transparent !important;
@@ -45,7 +46,7 @@ body {
 
 .card-item h2 {
     color: white;
-    font-size: 32px;
+    font-size: 24px;
     margin: 0px;
 }
 
@@ -99,19 +100,12 @@ body {
     outline: none;
 }
 
-#button__search {
+#button__recommend {
     color: white;
 }
 
 
 /*Conteniedo seccion Buscar*/
-
-#tab__search {
-    display: block;
-    margin: 40px 2%;
-    max-width: 96%;
-}
-
 
 /*Plataformas*/
 
@@ -201,6 +195,49 @@ body {
     color: white;
 }
 
+/*Contenido seccion recomendacion*/
+
+.tab-content {
+    display: none;
+    margin-top: 50px;
+}
+
+#tab__recommend {
+    display: block;
+    margin: 40px 2%;
+    max-width: 96%;
+}
+
+
+.tab-content h4 {
+    text-align: center;
+    color: white;
+}
+
+.container__input-search {
+    margin: 50px 0px;
+    display: flex;
+    justify-content: center;
+}
+
+.input-search {
+    text-align:center;
+    border-radius: 15px;
+    height: 50px;
+    width: 50%;
+    margin: 0px 20px;
+}
+.input-search:focus {
+    outline: none;
+}
+/*resultados de recomendacion*/
+#card-list-results{
+    visibility: hidden;
+}
+#title-recomendados{
+    text-align: center;
+    text-justify: center;
+}
 
 /*boton buscar*/
 
@@ -220,26 +257,3 @@ body {
     background-color: #4871FF;
 }
 
-
-/*Contenido seccion recomendacion*/
-
-.tab-content {
-    display: none;
-    margin-top: 50px;
-}
-
-.tab-content h4 {
-    text-align: center;
-    color: white;
-}
-
-.container__input-search {
-    margin: 100px 0px;
-    display: flex;
-    justify-content: center;
-}
-
-.input-search {
-    border-radius: 15px;
-    margin: 0px 20px;
-}
