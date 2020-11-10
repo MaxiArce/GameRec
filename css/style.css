@@ -4,6 +4,10 @@ body {
     width: 100%;
 }
 
+p {
+    color: white;
+}
+
 
 /* seccion populares */
 
@@ -12,7 +16,7 @@ body {
     margin-bottom: 100px;
 }
 
-.title{
+.title {
     color: white;
     font-weight: 400;
 }
@@ -107,6 +111,7 @@ body {
 
 /*Conteniedo seccion Buscar*/
 
+
 /*Plataformas*/
 
 .container__platforms {
@@ -195,6 +200,7 @@ body {
     color: white;
 }
 
+
 /*Contenido seccion recomendacion*/
 
 .tab-content {
@@ -208,7 +214,6 @@ body {
     max-width: 96%;
 }
 
-
 .tab-content h4 {
     text-align: center;
     color: white;
@@ -221,23 +226,29 @@ body {
 }
 
 .input-search {
-    text-align:center;
+    text-align: center;
     border-radius: 15px;
     height: 50px;
     width: 50%;
     margin: 0px 20px;
 }
+
 .input-search:focus {
     outline: none;
 }
+
+
 /*resultados de recomendacion*/
-#card-list-results{
+
+#card-list-results {
     visibility: hidden;
 }
-#title-recomendados{
+
+#title-recomendados {
     text-align: center;
     text-justify: center;
 }
+
 
 /*boton buscar*/
 
@@ -256,4 +267,3 @@ body {
     border-radius: 15px;
     background-color: #4871FF;
 }
-
