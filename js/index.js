@@ -1,4 +1,5 @@
 // javascript del index
+var savedGamesButton = document.getElementById("navbar-saved-games");
 var popularContainers = document.querySelectorAll(".card-item");
 var recommendButton = document.getElementById("button__recommend")
 var searchButton = document.getElementById("button__search")
@@ -16,6 +17,32 @@ slider.oninput = function() {
 //Agrega listeners a los bottones
 recommendButton.addEventListener("click", function() { showTabContent(0) });
 searchButton.addEventListener("click", function() { showTabContent(1) });
+savedGamesButton.addEventListener("click", showSavedGames);
+
+//Lee el local storage y muestra los juegos guardados
+function showSavedGames(){
+    var savedGamesModal = document.getElementById("savedGamesModal");
+
+    if (localStorage.getItem("SavedGames") == null){
+        alert("No hay juegos guardados")
+    }else{
+        var savedGames = JSON.parse(localStorage.getItem("SavedGames"))
+        savedGames.forEach(element =>{
+            var gameName = document.createElement('p');
+            gameName.innerHTML = element;
+            savedGamesModal.appendChild(gameName);
+        })
+    }
+
+    if (savedGamesModal.style.visibility === "hidden") {
+        savedGamesModal.style.visibility = "visible";
+      } else {
+        savedGamesModal.style.visibility = "hidden";
+        savedGamesModal.innerHTML = ""
+      }
+    
+}
+
 
 //funcion ocultar/mostrar tabs
 function showTabContent(tab) {

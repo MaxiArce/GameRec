@@ -17,7 +17,11 @@
         <a class="navbar-brand" href="#button__search">
             <img src="images/game-controller.svg" width="30" height="30" class="d-inline-block align-top" alt=""> BUSCADOR/RECOMENDADOR
         </a>
+        <a class="navbar-brand"id="navbar-saved-games" href="#">
+            <img src="images/save-icon.png" width="30" height="30" class="d-inline-block align-top" alt="">Guardados</a>
     </nav>
+    <div id="savedGamesModal">
+    </div>
     <!-- Populares -->
     <div class="container__populares-section">
         <h2 class="title title-populares">Populares</h2>
@@ -68,7 +72,7 @@
         <!-- Tab Recomendacion -->
         <div class="tab-content" id="tab__recommend">
 
-            <h4>Busca dos juegos para recibir recomendaciones similares</h4>
+            <h4>Busca dos juegos para recibir recomendaciones</h4>
 
             <div class="container__input-search">
                 <input class="input-search" id="input-search--game1" type="search" placeholder="Juego 1">
@@ -100,7 +104,7 @@
 
             <hr class="rounded">
 
-            <div id="container__results--recommend">
+            <div id="container__results--match">
                 <h2 class="title" id="title-recomendados">Resultados</h2>
             </div>
         </div>

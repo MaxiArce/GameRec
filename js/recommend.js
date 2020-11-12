@@ -4,6 +4,7 @@ window.onload = function() {
     var game1;
     var game2;
     var tagsMatch = [];
+    var savedGames = [];
 
     // constructor objeto juego
     function Game(id, name, image, tags) {
@@ -17,6 +18,8 @@ window.onload = function() {
     async function searchGame() {
         var inputGame1 = document.getElementById("input-search--game1").value;
         var inputGame2 = document.getElementById("input-search--game2").value;
+        //limpia los resultados 
+        document.getElementById("container__results--match").innerHTML = ""
         //valida los inputs
         if (inputGame1 != "" && inputGame2 != "") {
             game1 = await getGameFromApi("games", "search", inputGame1);
@@ -50,7 +53,7 @@ window.onload = function() {
         return game;
     }
 
-    //Rellena los dos resultados de busqueda con la informacion del array de juegos //todo async?
+    //Rellena los dos resultados de busqueda con la informacion del array de juegos 
     function fillCard(game, cardPosition) {
         var card = document.getElementById("card-list-results");
         var cardName = document.getElementById(`card-title-results-${cardPosition}`);
@@ -76,6 +79,7 @@ window.onload = function() {
     }
 
     //hace un request a la api con el id del juego por cada tag
+    //falta filtrar duplicados
     function searchGameResults() {
         tagsMatch.forEach(async element => {
             var gameResult = await getGameFromApi("games", "tags", `${(element.id)}`);
@@ -83,10 +87,52 @@ window.onload = function() {
         });
     }
 
+
     function addGameToResults(gameResult) {
-        var resultsContainer = document.getElementById("container__results--recommend");
-        var cardContainer = document.createElement('p');
-        cardContainer.innerHTML = gameResult.name;
+        var resultsContainer = document.getElementById("container__results--match");
+
+        var cardContainer = document.createElement('div');
+        cardContainer.className = "card card-item card-item-match-results card-background";
+        
+        var cardImage = document.createElement('img');
+        cardImage.src = gameResult.image;
+        cardImage.className = "card-img";
+        cardContainer.appendChild(cardImage);
+
+        var cardGradient = document.createElement('div');
+        cardGradient.className = "card-gradient";
+        cardContainer.appendChild(cardGradient);
+
+
+        var cardOverlay = document.createElement('div');
+        cardOverlay.className = "card-img-overlay d-flex align-items-start flex-column";
+        cardContainer.appendChild(cardOverlay);
+
+        var cardTitle = document.createElement('h2');
+        cardTitle.innerHTML = gameResult.name;
+        cardTitle.className = "card-title titulo mt-auto"
+        cardOverlay.appendChild(cardTitle);
+
+        var cardSaveButton =  document.createElement('a');
+        cardSaveButton.className = "btn-save"
+        cardSaveButton.addEventListener("click", function() {saveGameOnStorage(gameResult)});
+        cardSaveButton.innerHTML = "Guardar"
+        cardOverlay.appendChild(cardSaveButton);
+
+
         resultsContainer.appendChild(cardContainer);
+    }
+
+    //guarda los juegos en localStorage
+    function saveGameOnStorage(gameResult){
+        if (localStorage.getItem("SavedGames") == null){
+            savedGames.push(gameResult.name)
+            localStorage.setItem("SavedGames",JSON.stringify(savedGames))
+        }else{
+            savedGames = JSON.parse(localStorage.getItem("SavedGames"))
+            console.log(typeof(savedGames))
+            savedGames.push(gameResult.name)
+            localStorage.setItem("SavedGames",JSON.stringify(savedGames))
+        }
     }
 }

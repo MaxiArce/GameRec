@@ -8,7 +8,23 @@ p {
     color: white;
 }
 
-
+/*NavBar*/
+#navbar-saved-games{
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 18px;
+}
+#savedGamesModal{
+    z-index: 100;
+    visibility: hidden;
+    position: absolute;
+    right: 0;
+    background-color: #0a0a0a;
+}
+#savedGamesModal p{
+    font-size: 20px;
+    padding: 5px 15px;
+}
 /* seccion populares */
 
 .container__populares-section {
@@ -106,6 +122,20 @@ p {
 
 #button__recommend {
     color: white;
+}
+
+.btn-save {
+    background-color: steelblue;
+    padding: 0px 5px;
+    margin-top: 4px;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+}
+.btn-save:hover {
+    color: white;
+    text-decoration: none;
+    outline: none;
 }
 
 
@@ -248,6 +278,7 @@ p {
     text-align: center;
     text-justify: center;
 }
+
 
 
 /*boton buscar*/
