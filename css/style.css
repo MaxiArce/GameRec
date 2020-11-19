@@ -16,7 +16,6 @@ p {
 }
 #savedGamesModal{
     z-index: 100;
-    visibility: hidden;
     position: absolute;
     right: 0;
     background-color: #0a0a0a;
@@ -138,10 +137,6 @@ p {
     outline: none;
 }
 
-
-/*Conteniedo seccion Buscar*/
-
-
 /*Plataformas*/
 
 .container__platforms {
@@ -164,7 +159,6 @@ p {
 .button__platform:focus {
     outline: none;
 }
-
 
 /*Generos*/
 
