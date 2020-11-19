@@ -200,7 +200,7 @@ p {
 
 #range {
     -webkit-appearance: none;
-    width: 80%;
+    width: 100%;
     height: 15px;
     border-radius: 15px;
     background: grey;
@@ -263,17 +263,10 @@ p {
 
 
 /*resultados de recomendacion*/
-
-#card-list-results {
-    visibility: hidden;
-}
-
 #title-recomendados {
     text-align: center;
     text-justify: center;
 }
-
-
 
 /*boton buscar*/
 

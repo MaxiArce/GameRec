@@ -4,7 +4,13 @@ var popularContainers = $(".card-item");
 var recommendButton = $("#button__recommend");
 var searchButton = $("#button__search")
 var slider = $("#range");
-var output = $("#slider-text");
+var outputText = $("#slider-text");
+
+//cambia el texto del slider con cada cambio del slider
+
+slider.on('input',function() {
+    outputText.text(this.value);
+});
 
 //Agrega listeners a los bottones
 $(savedGamesButton).click(function() { showSavedGames() })
@@ -45,19 +51,15 @@ function fillPopularGames() {
             var gameResults = dataObject.results;
             //recorre el array y por cada juego recibido cambia el source de las img/nombre dentro del div
             for (let i = 0; i < gameResults.length; i++) {
-                var image = popularContainers[i].getElementsByClassName("card-img");
-                var title = popularContainers[i].getElementsByClassName("card-title");
-                image.item(0).src = gameResults[i].background_image;
-                title.item(0).innerHTML = gameResults[i].name;
+                var image = popularContainers.find(".card-img")[i];
+                var title = popularContainers.find(".card-title")[i];
+                image.src = gameResults[i].background_image;
+                title.innerHTML = gameResults[i].name;
             }
         });
 
 }
 
-//cambia el texto del slider con cada cambio del slider
-output.innerHTML = slider.value;
-slider.oninput = function() {
-    output.innerHTML = this.value;
-}
+
 
 fillPopularGames()

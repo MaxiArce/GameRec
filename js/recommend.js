@@ -1,6 +1,6 @@
 // javascript de la funcion principal - Para buscar o el usar el recomendador de juegos 
 window.onload = function() {
-    var buttonSearch = document.getElementById("button__search--recommend").addEventListener("click", searchGame);
+    var buttonSearch = $("#button__search--recommend").click(function() { searchGame() });
     var game1;
     var game2;
     var tagsMatch = [];
@@ -16,10 +16,10 @@ window.onload = function() {
 
     //recibe la informacion de los inputs y consulta la api
     async function searchGame() {
-        var inputGame1 = document.getElementById("input-search--game1").value;
-        var inputGame2 = document.getElementById("input-search--game2").value;
-        //limpia los resultados 
-        document.getElementById("container__results--match").innerHTML = ""
+        var inputGame1 = $("#input-search--game1").val();
+        var inputGame2 = $("#input-search--game2").val();
+        //limpia los resultados anteriores
+        $("#container__results--match").empty()
         //valida los inputs
         if (inputGame1 != "" && inputGame2 != "") {
             game1 = await getGameFromApi("games", "search", inputGame1);
@@ -55,12 +55,12 @@ window.onload = function() {
 
     //Rellena los dos resultados de busqueda con la informacion del array de juegos 
     function fillCard(game, cardPosition) {
-        var card = document.getElementById("card-list-results");
-        var cardName = document.getElementById(`card-title-results-${cardPosition}`);
-        var cardImage = document.getElementById(`card-img-results-${cardPosition}`);
-        cardName.innerHTML = game.name;
-        cardImage.src = game.image;
-        card.style.visibility = "visible";
+        var card = $(`#card-item-${cardPosition}`);
+        var cardName = $(`#card-title-results-${cardPosition}`);
+        var cardImage = $(`#card-img-results-${cardPosition}`);
+        cardName.text(game.name)
+        cardImage.attr("src", game.image)
+        card.show()
     }
 
     //busca coincidencias  de tags entre los dos juegos
@@ -89,38 +89,30 @@ window.onload = function() {
 
 
     function addGameToResults(gameResult) {
-        var resultsContainer = document.getElementById("container__results--match");
+        var resultsContainer = $("#container__results--match");
 
-        var cardContainer = document.createElement('div');
-        cardContainer.className = "card card-item card-item-match-results card-background";
+        var cardContainer = $("<div>", {"class": "card card-item card-item-match-results card-background"});
         
-        var cardImage = document.createElement('img');
-        cardImage.src = gameResult.image;
-        cardImage.className = "card-img";
-        cardContainer.appendChild(cardImage);
+        var cardImage = $("<img>", {"class": "card-img"} );
+        cardImage.attr("src", gameResult.image);
+        cardContainer.append(cardImage);
+        
+        var cardGradient = $("<div>", {"class": "card-gradient"});
+        cardContainer.append(cardGradient);
 
-        var cardGradient = document.createElement('div');
-        cardGradient.className = "card-gradient";
-        cardContainer.appendChild(cardGradient);
+        var cardOverlay = $("<div>", {"class": "card-img-overlay d-flex align-items-start flex-column"});
+        cardContainer.append(cardOverlay);
 
+        var cardTitle = $("<h2>", {"class": "card-title titulo mt-auto"});
+        cardTitle.text(gameResult.name);
+        cardOverlay.append(cardTitle);
 
-        var cardOverlay = document.createElement('div');
-        cardOverlay.className = "card-img-overlay d-flex align-items-start flex-column";
-        cardContainer.appendChild(cardOverlay);
+        var cardSaveButton =  $("<a>", {"class": "btn-save"});
+        cardSaveButton.click(function() {saveGameOnStorage(gameResult)});
+        cardSaveButton.text("Guardar");
+        cardOverlay.append(cardSaveButton);
 
-        var cardTitle = document.createElement('h2');
-        cardTitle.innerHTML = gameResult.name;
-        cardTitle.className = "card-title titulo mt-auto"
-        cardOverlay.appendChild(cardTitle);
-
-        var cardSaveButton =  document.createElement('a');
-        cardSaveButton.className = "btn-save"
-        cardSaveButton.addEventListener("click", function() {saveGameOnStorage(gameResult)});
-        cardSaveButton.innerHTML = "Guardar"
-        cardOverlay.appendChild(cardSaveButton);
-
-
-        resultsContainer.appendChild(cardContainer);
+        resultsContainer.append(cardContainer);
     }
 
     //guarda los juegos en localStorage
