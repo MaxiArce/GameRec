@@ -159,6 +159,11 @@ p {
 .button__platform:focus {
     outline: none;
 }
+.button__platform--active{
+    color: black;
+}
+
+
 
 /*Generos*/
 

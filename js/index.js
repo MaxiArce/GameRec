@@ -22,7 +22,7 @@ function showSavedGames() {
 
     if (savedGamesModal.is(":hidden")) {
 
-        savedGamesModal.show();
+        savedGamesModal.fadeIn(200);
 
         if (localStorage.getItem("SavedGames") == null) {
             alert("No hay juegos guardados")
@@ -44,11 +44,13 @@ function showSavedGames() {
 function fillPopularGames() {
     const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-01-01,2020-12-31&ordering=-added"
 
-    //request obtiene el json y lo recibe un promise como objeto
-    fetch(apiUrl)
-        .then((data) => data.json())
-        .then((dataObject) => {
-            var gameResults = dataObject.results;
+
+    $.ajax({
+        type:"GET",
+        url: apiUrl,
+        dataType: "json",
+        success: function(response){
+            var gameResults = response.results;
             //recorre el array y por cada juego recibido cambia el source de las img/nombre dentro del div
             for (let i = 0; i < gameResults.length; i++) {
                 var image = popularContainers.find(".card-img")[i];
@@ -56,7 +58,8 @@ function fillPopularGames() {
                 image.src = gameResults[i].background_image;
                 title.innerHTML = gameResults[i].name;
             }
-        });
+        }
+    });
 
 }
 
