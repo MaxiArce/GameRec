@@ -7,37 +7,86 @@ body {
 p {
     color: white;
 }
+h4{
+    color: white;
+}
+label{
+    color: white;
+}
 
 /*NavBar*/
-#navbar-saved-games{
-    color: white;
-    font-family: 'Montserrat', sans-serif;
-    font-size: 18px;
+.navbar{
+    overflow: hidden;
+    max-width: 100%;
+    padding: 8px 24px;
 }
-#savedGamesModal{
-    z-index: 100;
-    position: absolute;
-    right: 0;
-    background-color: #0a0a0a;
+#navbar-title{
+    font-family: 'Montserrat';
+    font-size: 38px;
+    font-weight: 700;
+    color: #D2D2D2;
+    padding: 0px;
 }
-#savedGamesModal p{
-    font-size: 20px;
-    padding: 5px 15px;
+
+.navbar-item {
+    font-family: Epilogue;
+    font-weight: 300;
+    color: #BBBBBB !important;
+} 
+.active {
+    color: white !important;
 }
+
+
 /* seccion populares */
 
 .container__populares-section {
-    margin: 20px;
-    margin-bottom: 100px;
+    margin-bottom: 20px;
+}
+.container__video{
+    position: relative;
+    margin:0px;
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background-size: cover;
+} 
+.video{
+    min-width: 100%;
+    height: auto;
+    display: flex;
+    position:relative;
+    z-index:0;
+}
+.video-overlay{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    z-index:0;
+    width: 100%;
+    max-height: 500px;
+    opacity: 1;
+    background: #0A0A0A80;
+}
+.container__cardlists{
+    padding: 0px 24px;
 }
 
 .title {
+    font-family: 'Montserrat';
     color: white;
-    font-weight: 400;
+    font-weight: 700;
 }
 
-.rounded {
-    background-color: grey;
+#title-populares{
+    position: relative;
+    margin-top: -150px;
+    z-index:1;
+}
+#title-lanzamientos{
+    position: relative;
+    margin-top: 100px;
+    z-index:1;
 }
 
 .card {
@@ -58,8 +107,9 @@ p {
 
 .card-item img {
     margin: 0px;
-    border-radius: 20px;
+    border-radius: 10px;
     width: 100%;
+    max-height: 180px;
     object-fit: cover;
 }
 
@@ -84,209 +134,275 @@ p {
     margin: 0px;
     width: 100%;
     height: 100%;
-    border-radius: 20px;
+    border-radius: 10px;
     position: absolute;
     opacity: 1;
     background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0) 100%);
 }
 
 
-/* seccion tabs buscar-recomendar */
-
-.container__tabs-section {
-    margin: 20px;
+/* seccion recomendaciones */
+.container__recommend-section{
+   margin-bottom: 20px; 
 }
 
-
-/* botones buscar-recomendar */
-
-.container__select-tab {
+#container__search{
     width: 100%;
+    position: relative;
+    z-index: 1;
+    padding: 0 24px;
+    margin-top: -100px;
+}
+#container__search-inputs{
     display: flex;
     justify-content: center;
+    border-radius: 10px;
+    background-color: #505050;
 }
-
-.button_select-tab {
-    margin: 10px 20px;
-    font-weight: 500;
-    font-size: 18px;
-    border: none;
-    background-color: transparent;
-    color: grey;
-}
-
-.button_select-tab:focus {
-    outline: none;
-}
-
-#button__recommend {
-    color: white;
-}
-
-.btn-save {
-    background-color: steelblue;
-    padding: 0px 5px;
-    margin-top: 4px;
-    border-radius: 5px;
-    font-family: 'Montserrat', sans-serif;
-    color: white;
-}
-.btn-save:hover {
-    color: white;
-    text-decoration: none;
-    outline: none;
-}
-
-/*Plataformas*/
-
-.container__platforms {
-    margin-top: 50px;
-}
-
-.container__platforms h4 {
-    color: white;
-}
-
-.button__platform {
-    color: white;
-    border: none;
-    margin: 5px 5px;
-    padding: 2px 10px;
-    border-radius: 15px;
-    background-color: grey;
-}
-
-.button__platform:focus {
-    outline: none;
-}
-.button__platform--active{
-    color: black;
-}
-
-
-
-/*Generos*/
-
-.container__genres {
-    margin-top: 50px;
-}
-
-.container__genres h4 {
-    color: white;
-}
-
-.button__genres {
-    color: white;
-    border: none;
-    margin: 5px 5px;
-    padding: 2px 10px;
-    border-radius: 15px;
-    background-color: grey;
-}
-
-.button__genres:focus {
-    outline: none;
-}
-
-
-/*Slider Año*/
-
-.container__slider {
-    margin-top: 50px;
-}
-
-.container__slider h4 {
-    color: white;
-}
-
-.container__slider p {
-    color: white;
-}
-
-#range {
-    -webkit-appearance: none;
-    width: 100%;
-    height: 15px;
-    border-radius: 15px;
-    background: grey;
-    outline: none;
-    /* opacity: 0.7; */
-    -webkit-transition: .2s;
-    transition: opacity .2s;
-}
-
-#range::-webkit-slider-thumb {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-    background: white;
-    cursor: pointer;
-}
-
-#slider-text {
-    color: white;
-}
-
-
-/*Contenido seccion recomendacion*/
-
-.tab-content {
-    display: none;
-    margin-top: 50px;
-}
-
-#tab__recommend {
-    display: block;
-    margin: 40px 2%;
-    max-width: 96%;
-}
-
-.tab-content h4 {
-    text-align: center;
-    color: white;
-}
-
-.container__input-search {
-    margin: 50px 0px;
-    display: flex;
-    justify-content: center;
-}
-
-.input-search {
-    text-align: center;
-    border-radius: 15px;
-    height: 50px;
+.container__search-input{
     width: 50%;
-    margin: 0px 20px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    background-color: #505050;
 }
-
-.input-search:focus {
+.search__input{
+    width: 90%;
+    height: 42px;
+    margin: 24px 5%;
+    border-radius: 4px;
+    text-indent: 10px;
+    border: none;
     outline: none;
 }
-
-
-/*resultados de recomendacion*/
-#title-recomendados {
-    text-align: center;
-    text-justify: center;
+.search__input::focus{
+    border: none;
+    outline: none;
+}
+.search__input--results{
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    height: auto;
+    width: 90%;
+    margin: 0px 5% 24px 5%;
+    overflow: hidden;
+    border-radius: 10px;
 }
 
-/*boton buscar*/
+.loading-icon{
+    width: 30%;
+}
+.container__platforms{
+    margin-bottom: 40px;
+}
+.nopad {
+    padding: 15px;
+    position: relative;
+}
+.image-checkbox {
+    border-radius: 10px;
+    margin: 0px;
+    background-color: #505050;
+    width: 100%;
+    height: 100%;
+}
+.img-fluid{
+    padding: 15px;
+}
+.checkbox-platform{
+ display: none;
+}
+.image-checkbox-active{
+    background-color: black;
+}
 
-.container__button-search {
+
+/*resultados*/
+.card-result{
+    border-radius: 10px;
+    margin: 0px;
+    max-height: 300px;
+    overflow: hidden;
+}
+.card-result img{
+    border-radius: 10px;
+}
+.titulo-result{
+    margin-bottom: 0px;
+    font-size: 18px;
+}
+.container__platforms{
+    margin-top: 25px;
+}
+.container__button-search{
     display: flex;
     justify-content: center;
 }
-
-.button__search {
+#button__search--recommend{
+    margin: 25px;
+    border-radius: 5px;
     font-size: 18px;
-    font-weight: 500;
-    color: white;
+    padding: 5px 15px;
+    font-weight: 700;
+    outline: none;
     border: none;
-    margin: 5px 5px;
-    padding: 4px 15px;
-    border-radius: 15px;
-    background-color: #4871FF;
+    color: black;
+    background-color: #BBBBBB;
 }
+.container-fluid{
+    padding: 0px;
+}
+.row{
+    padding: 0px;
+}
+#container_recommendation-results{
+    margin: 0px;
+}
+.card-recommendation{
+    border-radius: 10px;
+    padding: 15px;
+    margin: 10px 0px;
+    max-height: 200px;
+    overflow: hidden;
+
+}
+.card-content{
+    position: relative;
+    overflow: hidden;
+    min-height: 180px;
+    border-radius: 10px;
+}
+.card-gradient-recommend{
+    margin: 0px;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    border-radius: 10px;
+    position: absolute;
+    opacity: 1;
+    background: linear-gradient(0deg, black 0%, rgba(0, 0, 0, 0.8) 30%, rgba(0, 0, 0, 0) 100%);
+}
+.card-img-recommend{
+    width: 100%;
+    height: 100%;
+}
+.card-img-overlay-recommend{
+    padding: 20px 24px 0px 24px;
+}
+.titulo-recommendation{
+    font-size: 18px;
+    margin-bottom: 0px;
+}
+
+.card-platforms img{
+    width: 48px;
+    margin: 0px 5px;
+}
+.fav-icon {
+    position: relative;
+    margin: 5px 5px 5px auto;
+    max-width: 8%;
+    color: white;
+    
+}
+
+/*favoritos*/
+.container__saved-games{
+    position: absolute;
+    margin: 20px;
+    margin-top: 10vh;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: 30%;
+    z-index: 100;
+    background-color: #0A0A0A80;
+}
+.card__saved-game{
+    border-radius: 10px;
+    margin: 10px 5%;
+    background-color: #505050;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    width: 90%;
+    height: 120px;
+}
+.container__card__saved-game-image{
+    border-radius: 10px;
+    padding: 10px;
+    margin-left: 10px;
+    overflow: hidden;
+    max-width: 25%;
+}
+.card__saved-game-image{
+    margin-left: 50%;
+    transform: translateX(-50%);
+    height: 100%;
+}
+.card__saved-game-title{
+    align-self: center;
+    margin: 0px;
+    margin-left: 10px;
+}    
+
+
+@media (max-width: 576px) { 
+    .container__populares-section{
+        width: 100%;
+    }
+    #container__cardlists--populares{
+        padding: 0px 12px;
+    }
+    .card-item{
+        margin: 20px 0px;
+    }
+    #container__search{
+        width: 100%;
+    }
+    #container__search-inputs{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        border-radius: 10px;
+        background-color: #505050;
+    }
+    .container__search-input{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        border-radius: 10px;
+        background-color: #505050;
+    }
+    .container__video{
+        max-height: 300px;
+        margin: 0px;
+    }
+    .video{
+        max-height: 300px;
+    }
+}
+
+@media (max-width: 992px) { 
+    .navbar{
+        max-width: 100%;
+        background-color: #0A0A0A99 !important;
+        padding: 8px;
+    }
+    .navbar-toggler{
+        border: transparent !important;
+    }
+    .navbar-toggler:focus{
+        text-decoration: none !important;
+        outline: none;
+    }
+    .nav-link{
+        text-align: center;
+    }
+    .container__saved-games{
+        margin:0;
+        margin-top: 25vh;
+        width: 100%;
+    }
+ }

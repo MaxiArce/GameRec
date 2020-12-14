@@ -1,0 +1,89 @@
+<!-- Background Video -->
+<div class="container__video">
+    <video autoplay muted loop playsinline class="video" src="https://media.rawg.io/media/stories/996/9964891232bee5b4d6ebbedb11d4fa47.mp4"></video>
+    <div class="video-overlay"></div>
+</div>
+
+<div id=container__search>
+    <h2 class="title">Recomendados</h2>
+    <p>Ingresa dos titulos para recibir recomendaciones</p>
+    <div id="container__search-inputs">
+        <div class="container__search-input">
+            <input class="search__input" type="search" name="" id="search__input--1" placeholder="Comienza a escribir un titulo...">
+            <div class="search__input--results" style="display: none;"><img class="loading-icon" src="/images/loading-icon.svg" alt=""></div>
+        </div>
+        <div class="container__search-input">
+            <input class="search__input" type="search" name="" id="search__input--2" placeholder="Comienza a escribir un titulo..."">
+            <div class="search__input--results" style="display: none;"><img class="loading-icon" src="/images/loading-icon.svg" alt=""></div>
+        </div>
+    </div>
+    
+    <div class="container__platforms">
+        <h4>Filtros</h4>
+        <p>Plataforma (Todas por defecto)</p>
+        <div class="row">
+            <div class="col-md-1 col-3 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-fluid" src="../images/windows-icon.svg" />
+                  <input type="checkbox" class="checkbox-platform" name="platform[]" value="pc" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+            </div>
+            <div class="col-md-1 col-3 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-fluid" src="../images/ps5-icon.svg" />
+                  <input type="checkbox" class="checkbox-platform" name="platform[]" value="ps5" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+            </div>
+            <div class="col-md-1 col-3 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-fluid" src="../images/ps4-icon.svg" />
+                  <input type="checkbox" class="checkbox-platform" name="platform[]" value="ps4" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+            </div>
+            <div class="col-md-1 col-3 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-fluid" src="../images/xbox-one-icon.svg" />
+                  <input type="checkbox" class="checkbox-platform" name="platform[]" value="xbox-one" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+            </div>
+            <div class="col-md-1 col-3 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-fluid" src="../images/xbox-x-icon.svg" />
+                  <input type="checkbox" class="checkbox-platform" name="platform[]" value="xbox-x" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+            </div>
+            <div class="col-md-1 col-3 nopad text-center">
+                <label class="image-checkbox">
+                  <img class="img-fluid" src="../images/nintendo-icon.svg" />
+                  <input type="checkbox" class="checkbox-platform" name="platform[]" value="nintendo" />
+                  <i class="fa fa-check hidden"></i>
+                </label>
+            </div>
+        </div>
+    
+    </div>
+
+    <div class="container__release-date">
+        <label for="release-date">Fecha de lanzamiento</label>
+        <select name="Lanzamiento" id="release-date">
+            <option value="all">Todos</option>
+            <option value="last-2">Ultimos 2 años</option>
+            <option value="last-5">Ultimos 5 años</option>
+            <option value="last-10">Ultimos 10 años</option>
+        </select>
+    </div>
+
+
+    <div class="container__button-search">
+        <button class="button__search" id="button__search--recommend">Buscar</button>
+    </div>
+
+    <div class="container-fluid">
+        <div class="row col-12" id="container_recommendation-results"></div>
+    </div>
+</div>
