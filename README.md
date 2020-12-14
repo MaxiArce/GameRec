@@ -10,3 +10,15 @@ Pantallas de la SPA:
 * "Favoritos" : Muestra los juegos almacenados (en localStorage )como favoritos.
 
 https://gamerec.maxiarce.com/
+
+Nombre de algunos juegos: 
+*The last of us part 2
+*God of war
+*The forest
+*Gta V
+*Destiny 2
+*Left 4 dead 2
+*Amoung us
+*Fall guys
+
+
