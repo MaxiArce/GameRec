@@ -229,24 +229,24 @@ function getSelectedPlatform(selectedPlatform) {
 //Obtiene el rango de fechas del dropdown y lo transforma para que la api lo entienda 
 function getSelectedDate(selectedDate){
     var today = new Date();
-    var currentDate = today.getFullYear() + "-" + (today.getMonth()+1) + "-" + today.getDate();
+    var currentDate = today.getFullYear() + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate();
 
     //por defecto de toma la opcion "all"  en las otras opciones se restan los años seleccionados a la fecha actual 
     switch (selectedDate) {
         case 'all':
-            releaseDate = (today.getFullYear()-30) + "-" + (today.getMonth()+1) + "-" + today.getDate() + "," + currentDate;
+            releaseDate = (today.getFullYear()-30) + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate() + "," + currentDate;
             break;
         case 'last-2':
-            releaseDate = (today.getFullYear()-2) + "-" + (today.getMonth()+1) + "-" + today.getDate() + "," + currentDate;
+            releaseDate = (today.getFullYear()-2) + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate() + "," + currentDate;
             break;
         case 'last-5':
-            releaseDate = (today.getFullYear()-5) + "-" + (today.getMonth()+1) + "-" + today.getDate() + "," + currentDate;
+            releaseDate = (today.getFullYear()-5) + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate() + "," + currentDate;
             break;
         case 'last-10':
-            releaseDate = (today.getFullYear()-10) + "-" + (today.getMonth()+1) + "-" + today.getDate() + "," + currentDate;
+            releaseDate = (today.getFullYear()-10) + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate() + "," + currentDate;
             break;
         default:
-            releaseDate = (today.getFullYear()-30) + "-" + (today.getMonth()+1) + "-" + today.getDate() + "," + currentDate;
+            releaseDate = (today.getFullYear()-30) + "-" + ("0" + (today.getMonth() + 1)).slice(-2) + "-" + today.getDate() + "," + currentDate;
             break;
     }
 }

@@ -49,7 +49,7 @@ export async function requestGameFromApi(pagesize ,endPoint, qParameters, input 
         const apiUrl = `${apiData.url}${apiData.endPoint}?${apiData.queryParameters
         }=${apiData.searchInput}&pagesize=${pagesize}&platforms=${platforms}&dates=${dates}`;
 
-
+        console.log(apiUrl)
         let arrayData = await $.ajax({
             type:"GET",
             url: apiUrl,
