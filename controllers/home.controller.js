@@ -8,7 +8,7 @@ export default  () =>{
 
 //api request con los 5 juegos mas populares del 2020
 function fillPopularGames() {
-    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-01-01,2020-12-31&ordering=-added"
+    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-01-01,2020-12-31&ordering=-added&key=967c8446ad4b47f5a4d7d6e687abe23f"
     $.ajax({
         type:"GET",
         url: apiUrl,
@@ -30,7 +30,7 @@ function fillPopularGames() {
 
 //api request con lanzamientos de diciembre
 function fillLanzamientosGames() {
-    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-12-01,2020-12-31";
+    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-12-01,2020-12-31&key=967c8446ad4b47f5a4d7d6e687abe23f";
 
     $.ajax({
         type:"GET",

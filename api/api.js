@@ -1,6 +1,8 @@
 import Game from "../objects/game.js"
 //busca en la api el juego por parametro y lo retorna 
 export async function requestGameFromApi(pagesize ,endPoint, qParameters, input , platforms, dates) {
+    
+    const apiKey = "key=967c8446ad4b47f5a4d7d6e687abe23f"
 
     const apiData = {
         url: "https://api.rawg.io/api/",
@@ -17,7 +19,8 @@ export async function requestGameFromApi(pagesize ,endPoint, qParameters, input 
         var game = null;
         //crea la url de la api
         const apiUrl = `${apiData.url}${apiData.endPoint}?${apiData.queryParameters
-        }=${apiData.searchInput}&pagesize=${pagesize}`;
+        }=${apiData.searchInput}&pagesize=${pagesize}&${apiKey}`;
+
 
         let gameData = await $.ajax({
             type:"GET",
@@ -47,7 +50,7 @@ export async function requestGameFromApi(pagesize ,endPoint, qParameters, input 
         
         //crea la url de la api
         const apiUrl = `${apiData.url}${apiData.endPoint}?${apiData.queryParameters
-        }=${apiData.searchInput}&pagesize=${pagesize}&platforms=${platforms}&dates=${dates}`;
+        }=${apiData.searchInput}&pagesize=${pagesize}&platforms=${platforms}&dates=${dates}&${apiKey}`;
 
         console.log(apiUrl)
         let arrayData = await $.ajax({
