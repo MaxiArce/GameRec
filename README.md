@@ -1,9 +1,11 @@
 
 <h1 align="center">GAMEREC - Game suggentions finder</h1>
 
+<p align="center">
+  <img src="/assets/gamerec-gif.gif" />
+</p>
 
-
-# About
+## About
 
 Final project of the JavaScript course for [CoderHouse](https://www.coderhouse.es/)
 
@@ -18,5 +20,7 @@ The [RAGW Api](https://rawg.io/apidocs) was used to obtain the information of th
 ## Built using
 
 *HTML5
+
 *CSS
+
 *JavaScript
