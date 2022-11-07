@@ -2,13 +2,12 @@ export default  () =>{
     const divElement =  $("<div>", {"class": "container__populares-section"});
     divElement.load("../views/home.html")
     fillPopularGames()
-    fillLanzamientosGames()
+    fillReleasedGames()
     return divElement;
 }
 
-//api request con los 5 juegos mas populares del 2020
 function fillPopularGames() {
-    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-01-01,2020-12-31&ordering=-added&key=967c8446ad4b47f5a4d7d6e687abe23f"
+    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2022-01-01,2022-11-07&ordering=-added&key=967c8446ad4b47f5a4d7d6e687abe23f"
     $.ajax({
         type:"GET",
         url: apiUrl,
@@ -16,7 +15,7 @@ function fillPopularGames() {
         success: function(response){
             var popularCards = $(".card-item--populares");
             var gameResults = response.results;
-            //recorre el array y por cada juego recibido cambia el source de las img/nombre dentro del div
+            
             for (let i = 0; i < gameResults.length; i++) {
                 var image = popularCards.find(".card-img")[i];
                 var title = popularCards.find(".card-title")[i];
@@ -28,9 +27,8 @@ function fillPopularGames() {
 
 }
 
-//api request con lanzamientos de diciembre
-function fillLanzamientosGames() {
-    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2020-12-01,2020-12-31&key=967c8446ad4b47f5a4d7d6e687abe23f";
+function fillReleasedGames() {
+    const apiUrl = "https://api.rawg.io/api/games?page_size=4&dates=2022-11-01,2022-11-07&key=967c8446ad4b47f5a4d7d6e687abe23f";
 
     $.ajax({
         type:"GET",
@@ -39,7 +37,7 @@ function fillLanzamientosGames() {
         success: function(response){
             var lanzamientosCards = $(".card-item--lanzamientos");
             var gameResults = response.results;
-            //recorre el array y por cada juego recibido cambia el source de las img/nombre dentro del div
+
             for (let i = 0; i < gameResults.length; i++) {
                 var image = lanzamientosCards.find(".card-img")[i];
                 var title = lanzamientosCards.find(".card-title")[i];

@@ -1,9 +1,8 @@
 import {router} from './router/router.js';
 
-//llama por primera vez al router para cargar la pagina 
 router(window.location.hash)
 
-//consulta a router.js cuando se detecta un cambio en el hash
+//when there is a hash change calls the router 
 window.addEventListener('hashchange', () =>{
     router(window.location.hash)
 });

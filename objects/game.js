@@ -1,4 +1,4 @@
-// constructor objeto juego
+// contructor (game object)
 export default function Game(id, name, image, tags , platforms, date ) {
     this.id = id;
     this.name = name;
